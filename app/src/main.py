@@ -12,7 +12,7 @@ REQUEST_COUNT = Counter(
 
 @app.get("/health")
 def health():
-    return {"status": "healthy"}
+    return {"status": "healthy", "version": "phase-2-e2e-test"}
 
 
 @app.post("/predict")

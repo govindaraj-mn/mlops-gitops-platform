@@ -1,4 +1,5 @@
 import sys
+from urllib import response
 
 sys.path.insert(0, "app")
 
@@ -13,7 +14,8 @@ def test_health():
     response = client.get("/health")
 
     assert response.status_code == 200
-    assert response.json() == {"status": "healthy"}
+    assert response.json()["status"] == "healthy"
+    assert response.json()["version"] == "phase-2-e2e-test"
 
 
 def test_predict():
