@@ -49,7 +49,7 @@ module "eks" {
 
   node_min_size     = 1
   node_max_size     = 2
-  node_desired_size = 1
+  node_desired_size = 2
 
   endpoint_public_access = true
 
