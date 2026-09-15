@@ -57,7 +57,7 @@ module "eks" {
   endpoint_public_access = true
 
   public_access_cidrs = [
-    "205.254.163.60/32"
+    "205.254.163.51/32"
   ]
 
   tags = {
