@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 0
 
 image:
   repository: 724793286760.dkr.ecr.ap-south-1.amazonaws.com/ml-inference
