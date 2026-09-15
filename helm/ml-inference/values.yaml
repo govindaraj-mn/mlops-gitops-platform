@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: 724793286760.dkr.ecr.ap-south-1.amazonaws.com/ml-inference
-  tag: "5f117453c1e69281b36d4bbc4906839144de7cc4"
+  tag: "a803e1407dea22c135da802817a3e644cb790422"
   pullPolicy: IfNotPresent
 
 service:
