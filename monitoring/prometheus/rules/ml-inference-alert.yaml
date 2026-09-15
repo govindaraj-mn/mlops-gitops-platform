@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: ml-inference-alerts
+  namespace: ml-inference
+  labels:
+    release: monitoring
+spec:
+  groups:
+    - name: ml-inference
+      rules:
+        - alert: MLInferenceServiceDown
+          expr: absent(up{job="ml-inference-ml-inference"})
+          for: 1m
+          labels:
+            severity: critical
+          annotations:
+            summary: "ML inference service is down"
+            description: "Prometheus cannot scrape the ML inference service."
