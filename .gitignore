@@ -24,8 +24,9 @@ secrets.yaml
 # Python
 __pycache__/
 *.py[cod]
-.venv/
+.venv*/
 venv/
+.venv312/
 
 # Docker
 *.log
