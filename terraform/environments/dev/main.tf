@@ -28,7 +28,8 @@ module "vpc" {
 module "iam" {
   source = "../../modules/iam"
 
-  name = "mlops-dev"
+  name              = "mlops-dev"
+  github_repository = "govindaraj-mn/mlops-gitops-platform"
 }
 
 module "eks" {
