@@ -46,3 +46,8 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t ml-inference:${{ github.sha }} ./app
+
+      - name: Tag Docker image
+        run: |
+          docker tag ml-inference:${{ github.sha }} \
+            724793286760.dkr.ecr.ap-south-1.amazonaws.com/ml-inference:${{ github.sha }}
