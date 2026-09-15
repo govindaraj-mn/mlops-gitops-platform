@@ -51,3 +51,7 @@ jobs:
         run: |
           docker tag ml-inference:${{ github.sha }} \
             724793286760.dkr.ecr.ap-south-1.amazonaws.com/ml-inference:${{ github.sha }}
+
+      - name: Push Docker image to ECR
+        run: |
+          docker push 724793286760.dkr.ecr.ap-south-1.amazonaws.com/ml-inference:${{ github.sha }}
