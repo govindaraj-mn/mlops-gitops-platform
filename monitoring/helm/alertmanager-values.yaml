@@ -1,0 +1,29 @@
+alertmanager:
+  config:
+    global:
+      resolve_timeout: 5m
+
+    route:
+      group_by: ['namespace', 'alertname']
+      group_wait: 30s
+      group_interval: 5m
+      repeat_interval: 12h
+      receiver: 'slack'
+
+      routes:
+        - receiver: 'null'
+          matchers:
+            - alertname = "Watchdog"
+
+    receivers:
+      - name: 'null'
+
+      - name: 'slack'
+        slack_configs:
+          - api_url_file: '/etc/alertmanager/secrets/alertmanager-slack/slack-webhook-url'
+            channel: '#mlops-alerts'
+            send_resolved: true
+
+  alertmanagerSpec:
+    secrets:
+      - alertmanager-slack
