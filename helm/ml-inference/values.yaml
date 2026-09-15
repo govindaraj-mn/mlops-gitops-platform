@@ -17,3 +17,8 @@ resources:
   limits:
     cpu: 500m
     memory: 512Mi
+
+serviceMonitor:
+  enabled: true
+  interval: 15s
+  path: /metrics
